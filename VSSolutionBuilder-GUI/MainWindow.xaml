@@ -44,8 +44,11 @@
                     <Button Content="Bottom"
                             Click="MoveBottom_Clicked"
                             Margin="10,10,6,0" />
-                    <Button Content="Remove"
+                    <Button Content="Remove Selected"
                             Click="RemoveFile_Clicked"
+                            Margin="10,10,6,0" />
+                    <Button Content="Remove All"
+                            Click="RemoveAllFile_Clicked"
                             Margin="10,10,6,0" />
                 </StackPanel>
             </Grid>

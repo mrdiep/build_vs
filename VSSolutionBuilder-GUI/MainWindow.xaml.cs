@@ -52,6 +52,7 @@ namespace VSSolutionBuilderGui
         private void BuildSelectedSolution_Click(object sender, RoutedEventArgs e) => new SlnBuilder().Build(FileSlnTextBox.SelectedItems.Cast<string>().ToArray());
 
         private void RemoveFile_Clicked(object sender, RoutedEventArgs e) => FileSlnTextBox.SelectedItems.Cast<string>().ToList().ForEach(x => files.Remove(x));
+        private void RemoveAllFile_Clicked(object sender, RoutedEventArgs e) => files.Clear();
 
         private void MoveUp_Clicked(object sender, RoutedEventArgs e) => Move("up");
 

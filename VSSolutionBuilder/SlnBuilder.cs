@@ -31,17 +31,16 @@ namespace VSSolutionBuilder
             {
                 builder.AppendLine();
                 var fileName = Path.GetFileNameWithoutExtension(file);
-                var fullFilePath = file;
 
-                nugetRestoreBatText = nugetRestoreBatText.Replace("__{0}", fileName);
-                nugetRestoreBatText = nugetRestoreBatText.Replace("__{2}", fullFilePath);
-                builder.AppendLine(nugetRestoreBatText);
+                var innerNugetRestoreBatText = nugetRestoreBatText.Replace("__{0}", fileName);
+                innerNugetRestoreBatText = innerNugetRestoreBatText.Replace("__{2}", file);
+                builder.AppendLine(innerNugetRestoreBatText);
                 builder.AppendLine();
 
-                templateBatText = templateBatText.Replace("__{0}", fileName);
-                templateBatText = templateBatText.Replace("__{1}", fullFilePath);
-                templateBatText = templateBatText.Replace("__{2}", Path.Combine(tempPath, @"Logs\Build_" + fileName + "_LOG.log"));
-                builder.AppendLine(templateBatText);
+                var innerTemplateBatText = templateBatText.Replace("__{0}", fileName);
+                innerTemplateBatText = innerTemplateBatText.Replace("__{1}", file);
+                innerTemplateBatText = innerTemplateBatText.Replace("__{2}", Path.Combine(tempPath, @"Logs\Build_" + fileName + "_LOG.log"));
+                builder.AppendLine(innerTemplateBatText);
                 builder.AppendLine();
             }
 
